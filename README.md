@@ -1,2 +1,5 @@
 # Activity_register
-Activity register in C++ that lets you insert activities done in a day and shows trough an interface activities done in a specific day.
+## ENG
+Activity register in C++ that lets you insert activities done in a day with time of start and end and shows trough an interface activities done in a specific day.
+## ITA
+Registro di attività che memorizza cosa si è fatto durante una giornata con descrizione, tempo inizio e fine e mostra tramite interfaccia le attività svolte in un giorno specifico.
