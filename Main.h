@@ -1,0 +1,6 @@
+
+
+#ifndef ACTIVITY_REGISTER_MAIN_H
+#define ACTIVITY_REGISTER_MAIN_H
+
+#endif
