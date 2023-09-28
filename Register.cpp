@@ -1,26 +1,28 @@
 #include "Register.h"
 #include "Date.h"
+#include "DateActivityPair.h"
 #include <iostream>
 #include <iomanip>
 
 Register::Register() {}
 
 void Register::addActivity(const Date& date, const Activity& activity) {
-    DateActivityPair pair;
-    pair.date = date;
-    pair.activity = activity;
+    DateActivityPair pair= DateActivityPair(date, activity);
     activities.push_back(pair);
 }
 
 void Register::removeActivity(const Date& date, int index) {
-    for (auto it = activities.begin(); it != activities.end(); ++it) {
-        if ((*it).date.day == date.day && (*it).date.month == date.month &&
-            (*it).date.year == date.year && index >= 0 && index < activities.size()) {
-            activities.erase(it);
-            return;
+    if (index >= 0 && index < activities.size()) {
+        for (auto it = activities.begin(); it != activities.end(); ++it) {
+            if ((*it).date.day == date.day && (*it).date.month == date.month &&
+                (*it).date.year == date.year) {
+                activities.erase(it);
+                return;
+            }
         }
     }
 }
+
 
 void Register::displayActivities(const Date& date) const {
     bool found = false;

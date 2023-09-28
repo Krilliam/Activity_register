@@ -5,6 +5,7 @@
 
 class Activity {
 public:
+    Activity();
     Activity(const std::string& desc, int startHour, int startMinute, int endHour, int endMinute);
     void printDetails() const;
 

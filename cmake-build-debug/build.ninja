@@ -73,6 +73,12 @@ build CMakeFiles/ActivityRegister.dir/Activity.cpp.obj: CXX_COMPILER__ActivityRe
   OBJECT_DIR = CMakeFiles\ActivityRegister.dir
   OBJECT_FILE_DIR = CMakeFiles\ActivityRegister.dir
 
+build CMakeFiles/ActivityRegister.dir/DateActivityPair.cpp.obj: CXX_COMPILER__ActivityRegister_Debug C$:/Users/krill/CLionProjects/Activity_register/DateActivityPair.cpp || cmake_object_order_depends_target_ActivityRegister
+  DEP_FILE = CMakeFiles\ActivityRegister.dir\DateActivityPair.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ActivityRegister.dir
+  OBJECT_FILE_DIR = CMakeFiles\ActivityRegister.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ActivityRegister
@@ -81,10 +87,9 @@ build CMakeFiles/ActivityRegister.dir/Activity.cpp.obj: CXX_COMPILER__ActivityRe
 #############################################
 # Link the executable ActivityRegister.exe
 
-build ActivityRegister.exe: CXX_EXECUTABLE_LINKER__ActivityRegister_Debug CMakeFiles/ActivityRegister.dir/Main.cpp.obj CMakeFiles/ActivityRegister.dir/Register.cpp.obj CMakeFiles/ActivityRegister.dir/Date.cpp.obj CMakeFiles/ActivityRegister.dir/Activity.cpp.obj
+build ActivityRegister.exe: CXX_EXECUTABLE_LINKER__ActivityRegister_Debug CMakeFiles/ActivityRegister.dir/Main.cpp.obj CMakeFiles/ActivityRegister.dir/Register.cpp.obj CMakeFiles/ActivityRegister.dir/Date.cpp.obj CMakeFiles/ActivityRegister.dir/Activity.cpp.obj CMakeFiles/ActivityRegister.dir/DateActivityPair.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lpdcurses  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Users/krill/CLionProjects/Activity_register/PDCurses-master/pdcurses
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ActivityRegister.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

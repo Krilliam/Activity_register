@@ -1,7 +1,20 @@
 # ninja log v5
 94	1304	7175995284869466	CMakeFiles/ActivityRegister.dir/Date.cpp.obj	899b021957133883
-2	559	7176000676105498	build.ninja	ca356ca3611c08c5
 172	2287	7175995294686900	CMakeFiles/ActivityRegister.dir/Activity.cpp.obj	deaa7c6d6613a8a
-7	1592	7175995287731150	CMakeFiles/ActivityRegister.dir/Register.cpp.obj	e79039206cd65d1b
-139	2937	7175993490867395	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
-2	557	7176000676105498	build.ninja	ca356ca3611c08c5
+3	715	7176111437345577	build.ninja	ca356ca3611c08c5
+82	2086	7176106598928509	CMakeFiles/ActivityRegister.dir/Register.cpp.obj	e79039206cd65d1b
+7	1345	7176106591509552	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+235	2021	7176112410343337	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+121	2826	7176112418401632	CMakeFiles/ActivityRegister.dir/Register.cpp.obj	e79039206cd65d1b
+179	2390	7176113223314352	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+186	1895	7176115883111376	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+97	2416	7176119775811396	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+154	2322	7176121621163826	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+92	1919	7176132442389133	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+11	1482	7176145645533512	CMakeFiles/ActivityRegister.dir/Activity.cpp.obj	deaa7c6d6613a8a
+257	2031	7176145651036586	CMakeFiles/ActivityRegister.dir/Date.cpp.obj	899b021957133883
+5	1176	7176146680236589	CMakeFiles/ActivityRegister.dir/DateActivityPair.cpp.obj	292975ee5bfa47c5
+237	1908	7176146687547158	CMakeFiles/ActivityRegister.dir/Main.cpp.obj	c9b63942efd7e19c
+162	2370	7176146692170792	CMakeFiles/ActivityRegister.dir/Date.cpp.obj	899b021957133883
+86	2639	7176146694848658	CMakeFiles/ActivityRegister.dir/Register.cpp.obj	e79039206cd65d1b
+2640	3150	7176146699847457	ActivityRegister.exe	4d1966244d1c469d
