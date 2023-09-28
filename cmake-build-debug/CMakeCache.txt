@@ -132,7 +132,7 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/ActivityRegister
 CMAKE_LINKER:FILEPATH=C:/mingw32/bin/ld.exe
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/JetBrains/CLion 2023.1.4/bin/ninja/win/x64/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/ninja/win/x64/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -269,6 +269,9 @@ EXECUTABLE_OUTPUT_PATH:PATH=
 
 //Single output directory for building all libraries.
 LIBRARY_OUTPUT_PATH:PATH=
+
+//Path to a library.
+PDCURSES_LIBRARY:FILEPATH=PDCURSES_LIBRARY-NOTFOUND
 
 //The directory containing a CMake configuration file for PDCurses.
 PDCurses_DIR:PATH=PDCurses_DIR-NOTFOUND
