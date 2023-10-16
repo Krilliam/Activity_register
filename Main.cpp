@@ -1,38 +1,50 @@
 
-#include "Main.h"
-#include <iostream>
+#include "string"
 #include "Date.h"
 #include "Activity.h"
 #include "Register.h"
+#include "pdcurses.h"
 
 int main() {
+    initscr(); // Inizializza la modalità ncurses
+    keypad(stdscr, TRUE); // Abilita la tastiera speciale (freccette, F1, ecc.)
+
     Register activityRegister;
     int choice;
 
     while (true) {
-        std::cout << "Menu:" << std::endl;
-        std::cout << "1. Aggiungi attività" << std::endl;
-        std::cout << "2. Visualizza attività di una giornata" << std::endl;
-        std::cout << "3. Esci" << std::endl;
-        std::cout << "Scelta: ";
-        std::cin >> choice;
+        clear(); // Cancella lo schermo
+        printw("Menu:\n");
+        printw("1. Aggiungi attività\n");
+        printw("2. Visualizza attività di una giornata\n");
+        printw("3. Esci\n");
+        printw("Scelta: ");
+        refresh();
+
+        scanw("%d", &choice);
 
         if (choice == 1) {
             int day, month, year, startHour, startMinute, endHour, endMinute;
             std::string description;
 
-            std::cout << "Inserisci la data (gg mm aaaa): ";
-            std::cin >> day >> month >> year;
+            clear();
+            printw("Inserisci la data separata da spazi (gg mm aaaa): ");
+            scanw("%d %d %d", &day, &month, &year);
 
-            std::cout << "Inserisci l'ora di inizio (hh mm): ";
-            std::cin >> startHour >> startMinute;
+            printw("Inserisci l'ora di inizio separata da spazi (hh mm): ");
+            scanw("%d %d", &startHour, &startMinute);
 
-            std::cout << "Inserisci l'ora di fine (hh mm): ";
-            std::cin >> endHour >> endMinute;
+            printw("Inserisci l'ora di fine separata da spazi (hh mm): ");
+            scanw("%d %d", &endHour, &endMinute);
 
-            std::cout << "Inserisci la descrizione: ";
-            std::cin.ignore(); // Ignora newline residuo
-            std::getline(std::cin, description);
+            printw("Inserisci la descrizione: ");
+            refresh();
+            std::string tempDescription;
+            char tempChar;
+            while ((tempChar = getch()) != '\n') {
+                tempDescription.push_back(tempChar);
+            }
+            description = tempDescription;
 
             Date date(day, month, year);
             Activity activity(description, startHour, startMinute, endHour, endMinute);
@@ -40,20 +52,23 @@ int main() {
         } else if (choice == 2) {
             int day, month, year;
 
-            std::cout << "Inserisci la data da visualizzare (gg mm aaaa): ";
-            std::cin >> day >> month >> year;
+            clear();
+            printw("Inserisci la data da visualizzare (gg mm aaaa): ");
+            scanw("%d %d %d", &day, &month, &year);
             Date date(day, month, year);
 
             activityRegister.displayActivities(date);
         } else if (choice == 3) {
             break;
         } else {
-            std::cout << "Scelta non valida. Riprova." << std::endl;
+            clear();
+            printw("Scelta non valida. Riprova.");
+            refresh();
+            getch();
         }
     }
 
+    endwin(); // Termina la modalità ncurses
     return 0;
 }
-
-
 

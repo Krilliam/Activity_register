@@ -1,5 +1,7 @@
 #include "Activity.h"
-#include <iostream>
+#include "pdcurses.h"
+#include "string"
+
 Activity::Activity() {
     description="";
     startHour=0;
@@ -15,8 +17,8 @@ Activity::Activity(const std::string& desc, int startHour, int startMinute, int 
     this->endMinute = endMinute;
 }
 
-void Activity::printDetails() const {
-    std::cout << "Description: " << description << std::endl;
-    std::cout << "Start Time: " << startHour << ":" << startMinute << std::endl;
-    std::cout << "End Time: " << endHour << ":" << endMinute << std::endl;
+void Activity::printDetailsToWindow(WINDOW* win, int row) const {
+    mvwprintw(win, row, 1, "Description: %s", description.c_str());
+    mvwprintw(win, row + 1, 1, "Start Time: %02d:%02d", startHour, startMinute);
+    mvwprintw(win, row + 2, 1, "End Time: %02d:%02d", endHour, endMinute);
 }

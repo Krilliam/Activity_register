@@ -1,8 +1,7 @@
 #include "Register.h"
 #include "Date.h"
 #include "DateActivityPair.h"
-#include <iostream>
-#include <iomanip>
+#include "pdcurses.h"
 
 Register::Register() {}
 
@@ -23,24 +22,29 @@ void Register::removeActivity(const Date& date, int index) {
     }
 }
 
-
 void Register::displayActivities(const Date& date) const {
+    WINDOW* win = newwin(20, 80, 0, 0); // Crea una nuova finestra ncurses
+    box(win, 0, 0);
+    mvwprintw(win, 1, 1, "Attivtà per %02d/%02d/%04d:\n\n", date.day, date.month, date.year);
+
     bool found = false;
-    std::cout << "Activities for " << std::setw(2) << std::setfill('0') << date.day << "/"
-              << std::setw(2) << std::setfill('0') << date.month << "/" << date.year << ":\n\n";
+    int row = 3;
 
     for (size_t i = 0; i < activities.size(); ++i) {
         if (activities[i].date.day == date.day && activities[i].date.month == date.month &&
             activities[i].date.year == date.year) {
             found = true;
-            std::cout << "Activity " << i + 1 << ":\n";
-            activities[i].activity.printDetails();
-            std::cout << std::endl;
+            mvwprintw(win, row, 1, "Activity %zu:", i + 1);
+            activities[i].activity.printDetailsToWindow(win, row + 1); // Stampa i dettagli nella finestra
+            row += 4;
         }
     }
 
     if (!found) {
-        std::cout << "No activities found for " << std::setw(2) << std::setfill('0') << date.day << "/"
-                  << std::setw(2) << std::setfill('0') << date.month << "/" << date.year << std::endl;
+        mvwprintw(win, row, 1, "No activities found for %02d/%02d/%04d", date.day, date.month, date.year);
     }
+
+    wrefresh(win);
+    wgetch(win);
+    delwin(win);
 }

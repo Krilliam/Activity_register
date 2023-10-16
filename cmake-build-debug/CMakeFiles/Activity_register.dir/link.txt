@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2023.1.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Activity_register.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\Activity_register.dir/objects.a @CMakeFiles\Activity_register.dir\objects1.rsp
+C:\msys64\mingw64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Activity_register.dir/objects.a -Wl,--no-whole-archive -o Activity_register.exe -Wl,--out-implib,libActivity_register.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Activity_register.dir\linkLibs.rsp
